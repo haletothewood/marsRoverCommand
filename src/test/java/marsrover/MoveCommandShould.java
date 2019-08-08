@@ -4,14 +4,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class MarsRoverShould {
+public class MoveCommandShould {
     @Test
-    void move_in_the_same_direction_one_position_when_move_command_given() {
+    void move_rover_ahead_in_one_step() {
         MarsRover marsRover = new MarsRover(1, 1, "N");
-        Parser parser = new Parser();
-        Commander commander = new Commander(marsRover, parser);
+        Command moveCommand = new MoveCommand();
 
-        commander.giveOrder("M");
+        moveCommand.execute(marsRover);
 
         assertThat(marsRover.getX()).isEqualTo(1);
         assertThat(marsRover.getY()).isEqualTo(2);
