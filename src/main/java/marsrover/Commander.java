@@ -1,5 +1,7 @@
 package marsrover;
 
+import java.util.List;
+
 public class Commander {
     private MarsRover marsRover;
     private Parser parser;
@@ -10,7 +12,9 @@ public class Commander {
     }
 
     public void giveOrder(String order) {
-        Command command = parser.parse(order);
-        command.execute(marsRover);
+        List<Command> commands = parser.parse(order);
+        for (Command command :commands ) {
+            command.execute(marsRover);
+        }
     }
 }

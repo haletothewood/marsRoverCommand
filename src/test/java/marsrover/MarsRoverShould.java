@@ -11,10 +11,10 @@ public class MarsRoverShould {
         Parser parser = new Parser();
         Commander commander = new Commander(marsRover, parser);
 
-        commander.giveOrder("M");
+        commander.giveOrder("MM");
 
         assertThat(marsRover.getX()).isEqualTo(1);
-        assertThat(marsRover.getY()).isEqualTo(2);
+        assertThat(marsRover.getY()).isEqualTo(3);
         assertThat(marsRover.getDirection()).isEqualTo("N");
     }
 }

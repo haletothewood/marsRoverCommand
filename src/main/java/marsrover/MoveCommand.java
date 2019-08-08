@@ -6,4 +6,6 @@ public class MoveCommand implements Command {
     public void execute(MarsRover marsRover) {
         marsRover.setY(marsRover.getY() + 1);
     }
+
+
 }
